@@ -3,11 +3,13 @@
 # VARIABLES GO HERE
 books = []
 
-# MAIN MENU GOES HERE
+# FUNCTIONS GO HERE
+
+
 def call_menu():
     """Continuously calls library menu until user exits"""
     while True:
-        print """\nBrighticorn's Library: 
+        print """\nBrighticorn's Library:
         \nType the command to select an action
         - ADD a Book
         - VIEW Books
@@ -31,13 +33,15 @@ def call_menu():
         else:
             print "You did it wrong, Dave. Try again."
 
+
 def you_chose(command):
     """ Prints user choice"""
     print "You chose to {}".format(command)
 
+
 def add_books(book_title=''):
     """ Add the book title that the user wants to the bookshelf """
-    
+
     if len(book_title) == 0:
         book_title = raw_input("What is the title of the book? ").title()
 
@@ -53,6 +57,7 @@ def view_books():
     """ View the current contents of Brighticorn's Library!!!! YAY """
     for book in books:
         print "- ", book
+
 
 def check_books():
     """Checks if the the book is in the library :) """
