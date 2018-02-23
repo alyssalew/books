@@ -55,8 +55,14 @@ def add_books(book_title=''):
 
 def view_books():
     """ View the current contents of Brighticorn's Library!!!! YAY """
-    for book in books:
-        print "- ", book
+    sort_status = sorted_books()
+
+    if sort_status is True:
+        for book in sorted(books):
+            print "- ", book
+    else:
+        for book in books:
+            print "- ", book
 
 
 def check_books():
@@ -72,5 +78,21 @@ def check_books():
             add_books(book_title)
         else:
             print "\nOk, you can always add it later."
+
+
+def sorted_books():
+    """ Sorts the book shelf if they want it"""
+    print """How would you like to view the books:
+    A. In Alphabetical Order
+    B. In the Order they were Added to the Library"""
+    preference = raw_input("> ").upper()
+
+    if preference == "A":
+        return True
+    if preference == "B":
+        return False
+    else:
+        print "That is not a valid option. Try again."
+
 
 call_menu()
